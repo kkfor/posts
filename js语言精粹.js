@@ -76,4 +76,3 @@ var arr = [1,22,35,18,8,4]
 var b = arr.sort(function(a, b) {
   return a-b
 })
-console.log(b)
