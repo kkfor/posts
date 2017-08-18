@@ -76,3 +76,57 @@ var arr = [1,22,35,18,8,4]
 var b = arr.sort(function(a, b) {
   return a-b
 })
+
+/**
+ * 函数式构造器
+ */
+// 声明构造方法
+var mamal = function(spec) {
+  var that = {};
+
+  that.get_name = function() {
+    return spec.name;
+  };
+  that.says = function() {
+    return spec.saying;
+  };
+
+  return that;
+}
+
+// 实例化
+var myMamal = mamal({name: 'hari', saying: 'wuwu'})
+
+// console.log(myMamal.get_name(), myMamal.says())
+
+// 函数式继承
+var cat = function(spec) {
+  var that = mamal(spec);
+
+  that.eat = function() {
+    return spec.foods;
+  };
+
+  return that;
+}
+
+// 实例化
+var mycat = cat({name: 'hulo', foods: 'fish', saying: 'miao'})
+// console.log(mycat.get_name())
+
+/**
+ * 数字单词排序
+ */
+var m =['aa', 'bb', 'vbd', 123, 541, 22, 61, 18];
+m.sort(function(a, b) {
+  // 相等则不变
+  if(a === b) {
+    return 0;
+  }
+  // 类型相同，从小到大
+  if(typeof a === typeof b) {
+    return a < b ? -1 : 1;
+  }
+  // 类型不同时，按类型排列
+  return typeof a < typeof b ? -1 : 1;
+});
