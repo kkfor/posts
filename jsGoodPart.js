@@ -130,3 +130,21 @@ m.sort(function(a, b) {
   // 类型不同时，按类型排列
   return typeof a < typeof b ? -1 : 1;
 });
+
+/**
+ * 利用apply实现bind
+ */
+Function.method('bnd', function(that) {
+  var method = this,
+      slice = Array.prototype.slice,
+      args = slice.apply(arguments, [1]);
+      console.log(args)
+      console.log(arguments)
+  return function() {
+    return method.apply(that, args.concat(slice.apply(arguments, [0])))
+  }
+})
+
+/**
+ * 
+ */
