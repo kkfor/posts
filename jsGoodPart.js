@@ -6,7 +6,7 @@ if (typeof Object.beget !== 'function') {
     var F = function() {};
     F.prototype = o;
     return new F();
-  }
+  };
 }
 
 /**
@@ -48,34 +48,34 @@ Function.method('new', function() {
   var that = Object.create(this.prototype);
   var other = this.apply(that, arguments);
   return (typeof other === 'object' && other) || that;
-})
+});
 
 
 Object.method('superior', function() {
   var that = this,
       method = that[name];
   return function() {
-    return method.apply(that, arguments)
-  }
-})
+    return method.apply(that, arguments);
+  };
+});
 
 /**
  * 判断数组
  */
 // 方法1
 var isArray = function(value) {
-  return value && typeof value === 'object' && value.constructor === Array
-}
+  return value && typeof value === 'object' && value.constructor === Array;
+};
 
 // 方法2
 var isArray2 = function(value) {
-  return Object.prototype.toString.apply(value) === '[object Array]'
-}
+  return Object.prototype.toString.apply(value) === '[object Array]';
+};
 
-var arr = [1,22,35,18,8,4]
+var arr = [1,22,35,18,8,4];
 var b = arr.sort(function(a, b) {
-  return a-b
-})
+  return a-b;
+});
 
 /**
  * 函数式构造器
@@ -92,10 +92,10 @@ var mamal = function(spec) {
   };
 
   return that;
-}
+};
 
 // 实例化
-var myMamal = mamal({name: 'hari', saying: 'wuwu'})
+var myMamal = mamal({name: 'hari', saying: 'wuwu'});
 
 // console.log(myMamal.get_name(), myMamal.says())
 
@@ -108,10 +108,10 @@ var cat = function(spec) {
   };
 
   return that;
-}
+};
 
 // 实例化
-var mycat = cat({name: 'hulo', foods: 'fish', saying: 'miao'})
+var mycat = cat({name: 'hulo', foods: 'fish', saying: 'miao'});
 // console.log(mycat.get_name())
 
 /**
@@ -138,13 +138,14 @@ Function.method('bnd', function(that) {
   var method = this,
       slice = Array.prototype.slice,
       args = slice.apply(arguments, [1]);
-      console.log(args)
-      console.log(arguments)
   return function() {
-    return method.apply(that, args.concat(slice.apply(arguments, [0])))
-  }
-})
+    return method.apply(that, args.concat(slice.apply(arguments, [0])));
+  };
+});
 
 /**
  * 
  */
+var str = 'fsf';
+var b = str.slice(2,3);
+console.log(b);
