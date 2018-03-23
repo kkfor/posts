@@ -1,0 +1,1 @@
+backpack是node.js的极简构建系统。受facebook的create-reac-app,zeit的next.js和remy的nodemon启发，你可以用backpack通过零配置创建现成node.js应用和服务。backpack监听所有文件，热加载，替换和构建，所以你不必重启。有一些默认约定（像支持最新的JavaScript（async/await,对象展开运算符和类属性）），但是可以根据你的项目需求自定义配置。最方便的是你可以将backopack添加进你已经存在的node.js项目就像一个依赖。
