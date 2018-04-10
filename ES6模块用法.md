@@ -16,8 +16,26 @@ import { foo1, foo2 } from './bar'
 import * as foo from './bar'
 ```
 - 导入默认模块
+用于
 ```javascript
 import foo from './bar'
 ```
 ### 导出
 export导出模块
+- 导出单个模块
+```javascript
+export foo1
+```
+- 导出多个模块
+```javascript
+export {foo1, foo2, foo3}
+```
+- 重命名导出
+```javascript
+export {foo1 as foo2}
+```
+- 默认导出
+`export default`为模块中指定默认输出值，只允许默认输出一个值
+```javascript
+export default foo1
+```
